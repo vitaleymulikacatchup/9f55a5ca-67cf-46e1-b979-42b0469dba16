@@ -14,19 +14,80 @@ import ContactSplit from '@/components/sections/contact/ContactSplit';
 import FooterBase from '@/components/sections/footer/FooterBase';
 import { Award, BookOpen, Coffee, Globe, HelpCircle, Leaf, MapPin, TrendingUp, Users } from "lucide-react";
 
+const assetMap = [
+  {
+    id: "hero-coffee-shop",
+    url: "https://images.pexels.com/photos/2067431/pexels-photo-2067431.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "Modern coffee shop interior showcasing artisan brewing"
+  },
+  {
+    id: "artisan-espresso",
+    url: "https://images.pexels.com/photos/1835900/pexels-photo-1835900.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "Professional espresso brewing"
+  },
+  {
+    id: "latte-art",
+    url: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "Latte art creation"
+  },
+  {
+    id: "cold-brew",
+    url: "https://images.pexels.com/photos/7282737/pexels-photo-7282737.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "Cold brew coffee served"
+  },
+  {
+    id: "ethiopian-beans",
+    url: "https://images.pexels.com/photos/14745651/pexels-photo-14745651.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "Ethiopian Arabica coffee beans"
+  },
+  {
+    id: "colombian-beans",
+    url: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "Colombian Robusta coffee beans"
+  },
+  {
+    id: "house-blend-beans",
+    url: "https://images.pexels.com/photos/942733/pexels-photo-942733.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "House blend coffee beans"
+  },
+  {
+    id: "head-barista",
+    url: "https://images.pexels.com/photos/15444413/pexels-photo-15444413.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "Maria Santos, Head Barista"
+  },
+  {
+    id: "coffee-roaster",
+    url: "https://images.pexels.com/photos/6930545/pexels-photo-6930545.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "James Rodriguez, Coffee Roaster"
+  },
+  {
+    id: "brewing-guide",
+    url: "https://images.pexels.com/photos/2067431/pexels-photo-2067431.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "Coffee brewing equipment guide"
+  },
+  {
+    id: "coffee-plantation",
+    url: "https://images.pexels.com/photos/7125592/pexels-photo-7125592.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "Coffee plantation and farming"
+  },
+  {
+    id: "latte-tutorial",
+    url: "https://images.pexels.com/photos/2251756/pexels-photo-2251756.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "Latte art tutorial and techniques"
+  },
+  {
+    id: "coffee-shop-interior",
+    url: "https://images.pexels.com/photos/26492562/pexels-photo-26492562.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+    alt: "Cozy coffee shop interior"
+  }
+];
+
 export default function Home() {
   return (
     <ThemeProvider
       defaultButtonVariant="text-stagger"
       defaultTextAnimation="entrance-slide"
       borderRadius="rounded"
-      contentWidth="small"
-      sizing="large"
-      background="none"
-      cardStyle="glass-elevated"
-      primaryButtonStyle="diagonal-gradient"
-      secondaryButtonStyle="solid"
-      showBlurBottom={false}
     >
       <div id="nav" data-section="nav">
         <NavbarStyleApple
@@ -50,8 +111,8 @@ export default function Home() {
             { text: "Explore Menu", href: "product" },
             { text: "Visit Us", href: "contact" }
           ]}
-          imageSrc="https://images.pexels.com/photos/2067431/pexels-photo-2067431.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-          imageAlt="Modern coffee shop interior showcasing artisan brewing"
+          imageSrc={assetMap.find(asset => asset.id === "hero-coffee-shop")?.url || "https://images.pexels.com/photos/2067431/pexels-photo-2067431.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"}
+          imageAlt={assetMap.find(asset => asset.id === "hero-coffee-shop")?.alt || "Modern coffee shop interior showcasing artisan brewing"}
         />
       </div>
 
@@ -75,20 +136,20 @@ export default function Home() {
             {
               title: "Artisan Espresso",
               description: "Hand-pulled espresso shots using our premium blend, extracted with precision timing and temperature control",
-              imageSrc: "https://images.pexels.com/photos/1835900/pexels-photo-1835900.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Professional espresso brewing"
+              imageSrc: assetMap.find(asset => asset.id === "artisan-espresso")?.url || "https://images.pexels.com/photos/1835900/pexels-photo-1835900.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "artisan-espresso")?.alt || "Professional espresso brewing"
             },
             {
               title: "Signature Latte Art",
               description: "Beautiful latte art created by our skilled baristas, combining perfectly steamed milk with artistic flair",
-              imageSrc: "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Latte art creation"
+              imageSrc: assetMap.find(asset => asset.id === "latte-art")?.url || "https://images.pexels.com/photos/302899/pexels-photo-302899.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "latte-art")?.alt || "Latte art creation"
             },
             {
               title: "Cold Brew Perfection",
               description: "24-hour cold extraction process creating smooth, less acidic coffee with naturally sweet flavors",
-              imageSrc: "https://images.pexels.com/photos/7282737/pexels-photo-7282737.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Cold brew coffee served"
+              imageSrc: assetMap.find(asset => asset.id === "cold-brew")?.url || "https://images.pexels.com/photos/7282737/pexels-photo-7282737.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "cold-brew")?.alt || "Cold brew coffee served"
             }
           ]}
         />
@@ -105,22 +166,22 @@ export default function Home() {
               id: "1",
               name: "Ethiopian Arabica",
               price: "$18.99",
-              imageSrc: "https://images.pexels.com/photos/14745651/pexels-photo-14745651.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Ethiopian Arabica coffee beans"
+              imageSrc: assetMap.find(asset => asset.id === "ethiopian-beans")?.url || "https://images.pexels.com/photos/14745651/pexels-photo-14745651.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "ethiopian-beans")?.alt || "Ethiopian Arabica coffee beans"
             },
             {
               id: "2",
               name: "Colombian Robusta",
               price: "$16.99",
-              imageSrc: "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Colombian Robusta coffee beans"
+              imageSrc: assetMap.find(asset => asset.id === "colombian-beans")?.url || "https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "colombian-beans")?.alt || "Colombian Robusta coffee beans"
             },
             {
               id: "3",
               name: "House Blend",
               price: "$14.99",
-              imageSrc: "https://images.pexels.com/photos/942733/pexels-photo-942733.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "House blend coffee beans"
+              imageSrc: assetMap.find(asset => asset.id === "house-blend-beans")?.url || "https://images.pexels.com/photos/942733/pexels-photo-942733.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "house-blend-beans")?.alt || "House blend coffee beans"
             }
           ]}
         />
@@ -163,16 +224,16 @@ export default function Home() {
               name: "Maria Santos",
               role: "Head Barista",
               description: "Former coffee competition champion with 8 years of experience in specialty coffee brewing and latte art mastery.",
-              imageSrc: "https://images.pexels.com/photos/15444413/pexels-photo-15444413.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Maria Santos, Head Barista"
+              imageSrc: assetMap.find(asset => asset.id === "head-barista")?.url || "https://images.pexels.com/photos/15444413/pexels-photo-15444413.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "head-barista")?.alt || "Maria Santos, Head Barista"
             },
             {
               id: "2",
               name: "James Rodriguez",
               role: "Coffee Roaster",
               description: "Master roaster specializing in single-origin beans with expertise in bringing out unique flavor profiles from different regions.",
-              imageSrc: "https://images.pexels.com/photos/6930545/pexels-photo-6930545.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "James Rodriguez, Coffee Roaster"
+              imageSrc: assetMap.find(asset => asset.id === "coffee-roaster")?.url || "https://images.pexels.com/photos/6930545/pexels-photo-6930545.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "coffee-roaster")?.alt || "James Rodriguez, Coffee Roaster"
             }
           ]}
         />
@@ -221,10 +282,10 @@ export default function Home() {
               category: "Brewing Guide",
               title: "Perfect Home Brewing Techniques",
               excerpt: "Master the art of brewing exceptional coffee at home with our step-by-step guide to different brewing methods",
-              imageSrc: "https://images.pexels.com/photos/2067431/pexels-photo-2067431.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Coffee brewing equipment guide",
+              imageSrc: assetMap.find(asset => asset.id === "brewing-guide")?.url || "https://images.pexels.com/photos/2067431/pexels-photo-2067431.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "brewing-guide")?.alt || "Coffee brewing equipment guide",
               authorName: "Maria Santos",
-              authorAvatar: "https://images.pexels.com/photos/15444413/pexels-photo-15444413.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              authorAvatar: assetMap.find(asset => asset.id === "head-barista")?.url || "https://images.pexels.com/photos/15444413/pexels-photo-15444413.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
               date: "15 Jan 2025"
             },
             {
@@ -232,10 +293,10 @@ export default function Home() {
               category: "Origin Story",
               title: "From Farm to Cup: Ethiopian Origins",
               excerpt: "Journey with us to the birthplace of coffee and discover how Ethiopian farmers cultivate the beans in your morning cup",
-              imageSrc: "https://images.pexels.com/photos/7125592/pexels-photo-7125592.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Coffee plantation and farming",
+              imageSrc: assetMap.find(asset => asset.id === "coffee-plantation")?.url || "https://images.pexels.com/photos/7125592/pexels-photo-7125592.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "coffee-plantation")?.alt || "Coffee plantation and farming",
               authorName: "James Rodriguez",
-              authorAvatar: "https://images.pexels.com/photos/6930545/pexels-photo-6930545.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              authorAvatar: assetMap.find(asset => asset.id === "coffee-roaster")?.url || "https://images.pexels.com/photos/6930545/pexels-photo-6930545.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
               date: "12 Jan 2025"
             },
             {
@@ -243,10 +304,10 @@ export default function Home() {
               category: "Technique",
               title: "Mastering Latte Art Basics",
               excerpt: "Learn the foundational techniques for creating beautiful latte art, from milk steaming to pouring patterns",
-              imageSrc: "https://images.pexels.com/photos/2251756/pexels-photo-2251756.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
-              imageAlt: "Latte art tutorial and techniques",
+              imageSrc: assetMap.find(asset => asset.id === "latte-tutorial")?.url || "https://images.pexels.com/photos/2251756/pexels-photo-2251756.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              imageAlt: assetMap.find(asset => asset.id === "latte-tutorial")?.alt || "Latte art tutorial and techniques",
               authorName: "Maria Santos",
-              authorAvatar: "https://images.pexels.com/photos/15444413/pexels-photo-15444413.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
+              authorAvatar: assetMap.find(asset => asset.id === "head-barista")?.url || "https://images.pexels.com/photos/15444413/pexels-photo-15444413.jpeg?auto=compress&cs=tinysrgb&h=650&w=940",
               date: "8 Jan 2025"
             }
           ]}
@@ -259,8 +320,8 @@ export default function Home() {
           title="Come Experience Our Coffee"
           description="Visit our welcoming coffee shop for freshly brewed coffee, friendly service, and a warm community atmosphere. Subscribe to our newsletter for updates on new blends and special events."
           tagIcon={MapPin}
-          imageSrc="https://images.pexels.com/photos/26492562/pexels-photo-26492562.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"
-          imageAlt="Cozy coffee shop interior"
+          imageSrc={assetMap.find(asset => asset.id === "coffee-shop-interior")?.url || "https://images.pexels.com/photos/26492562/pexels-photo-26492562.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"}
+          imageAlt={assetMap.find(asset => asset.id === "coffee-shop-interior")?.alt || "Cozy coffee shop interior"}
           inputPlaceholder="Your email address"
           buttonText="Stay Updated"
           termsText="By subscribing, you'll receive updates about new coffee arrivals, brewing tips, and special events. Unsubscribe anytime."
